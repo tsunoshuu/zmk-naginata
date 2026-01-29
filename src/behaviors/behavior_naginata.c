@@ -200,18 +200,18 @@ static naginata_kanamap ngdickana[] = {
     {.shift = NONE    , .douji = B_F|B_U|B_C    , .kana = {Z, Y, A, NONE, NONE, NONE      }, .func = nofunc }, // じゃ
     {.shift = NONE    , .douji = B_F|B_U|B_E    , .kana = {Z, Y, U, NONE, NONE, NONE      }, .func = nofunc }, // じゅ
     {.shift = NONE    , .douji = B_F|B_U|B_S    , .kana = {Z, Y, O, NONE, NONE, NONE      }, .func = nofunc }, // じょ
-    {.shift = NONE    , .douji = B_J|B_C        , .kana = {K, Y, A, NONE, NONE, NONE      }, .func = nofunc }, // きゃ
-    {.shift = NONE    , .douji = B_J|B_E        , .kana = {K, Y, U, NONE, NONE, NONE      }, .func = nofunc }, // きゅ
-    {.shift = NONE    , .douji = B_J|B_S        , .kana = {K, Y, O, NONE, NONE, NONE      }, .func = nofunc }, // きょ
-    {.shift = NONE    , .douji = B_F|B_J|B_C    , .kana = {G, Y, A, NONE, NONE, NONE      }, .func = nofunc }, // ぎゃ
-    {.shift = NONE    , .douji = B_F|B_J|B_E    , .kana = {G, Y, U, NONE, NONE, NONE      }, .func = nofunc }, // ぎゅ
-    {.shift = NONE    , .douji = B_F|B_J|B_S    , .kana = {G, Y, O, NONE, NONE, NONE      }, .func = nofunc }, // ぎょ
-    {.shift = NONE    , .douji = B_I|B_C        , .kana = {T, Y, A, NONE, NONE, NONE      }, .func = nofunc }, // ちゃ
-    {.shift = NONE    , .douji = B_I|B_E        , .kana = {T, Y, U, NONE, NONE, NONE      }, .func = nofunc }, // ちゅ
-    {.shift = NONE    , .douji = B_I|B_S        , .kana = {T, Y, O, NONE, NONE, NONE      }, .func = nofunc }, // ちょ
-    {.shift = NONE    , .douji = B_F|B_I|B_C    , .kana = {D, Y, A, NONE, NONE, NONE      }, .func = nofunc }, // ぢゃ
-    {.shift = NONE    , .douji = B_F|B_I|B_E    , .kana = {D, Y, U, NONE, NONE, NONE      }, .func = nofunc }, // ぢゅ
-    {.shift = NONE    , .douji = B_F|B_I|B_S    , .kana = {D, Y, O, NONE, NONE, NONE      }, .func = nofunc }, // ぢょ
+    {.shift = NONE    , .douji = B_O|B_C        , .kana = {K, Y, A, NONE, NONE, NONE      }, .func = nofunc }, // きゃ
+    {.shift = NONE    , .douji = B_O|B_E        , .kana = {K, Y, U, NONE, NONE, NONE      }, .func = nofunc }, // きゅ
+    {.shift = NONE    , .douji = B_O|B_S        , .kana = {K, Y, O, NONE, NONE, NONE      }, .func = nofunc }, // きょ
+    {.shift = NONE    , .douji = B_F|B_O|B_C    , .kana = {G, Y, A, NONE, NONE, NONE      }, .func = nofunc }, // ぎゃ
+    {.shift = NONE    , .douji = B_F|B_O|B_E    , .kana = {G, Y, U, NONE, NONE, NONE      }, .func = nofunc }, // ぎゅ
+    {.shift = NONE    , .douji = B_F|B_O|B_S    , .kana = {G, Y, O, NONE, NONE, NONE      }, .func = nofunc }, // ぎょ
+    {.shift = NONE    , .douji = B_L|B_C        , .kana = {T, Y, A, NONE, NONE, NONE      }, .func = nofunc }, // ちゃ
+    {.shift = NONE    , .douji = B_L|B_E        , .kana = {T, Y, U, NONE, NONE, NONE      }, .func = nofunc }, // ちゅ
+    {.shift = NONE    , .douji = B_L|B_S        , .kana = {T, Y, O, NONE, NONE, NONE      }, .func = nofunc }, // ちょ
+    {.shift = NONE    , .douji = B_F|B_L|B_C    , .kana = {D, Y, A, NONE, NONE, NONE      }, .func = nofunc }, // ぢゃ
+    {.shift = NONE    , .douji = B_F|B_L|B_E    , .kana = {D, Y, U, NONE, NONE, NONE      }, .func = nofunc }, // ぢゅ
+    {.shift = NONE    , .douji = B_F|B_L|B_S    , .kana = {D, Y, O, NONE, NONE, NONE      }, .func = nofunc }, // ぢょ
     {.shift = NONE    , .douji = B_M|B_C        , .kana = {N, Y, A, NONE, NONE, NONE      }, .func = nofunc }, // にゃ
     {.shift = NONE    , .douji = B_M|B_E        , .kana = {N, Y, U, NONE, NONE, NONE      }, .func = nofunc }, // にゅ
     {.shift = NONE    , .douji = B_M|B_S        , .kana = {N, Y, O, NONE, NONE, NONE      }, .func = nofunc }, // にょ
