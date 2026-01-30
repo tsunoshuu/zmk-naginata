@@ -270,9 +270,9 @@ static naginata_kanamap ngdickana[] = {
     
     // 追加
     {.shift = NONE    , .douji = B_SPACE        , .kana = {SPACE, NONE, NONE, NONE, NONE, NONE  }, .func = nofunc},
-    {.shift = B_SPACE , .douji = B_V            , .kana = {COMMA, ENTER, NONE, NONE, NONE, NONE }, .func = nofunc},
+    {.shift = NONE    , .douji = B_COMMA        , .kana = {COMMA, ENTER, NONE, NONE, NONE, NONE }, .func = nofunc},
     {.shift = NONE    , .douji = B_Q            , .kana = {NONE, NONE, NONE, NONE, NONE, NONE   }, .func = nofunc},
-    {.shift = B_SPACE , .douji = B_M            , .kana = {DOT, ENTER, NONE, NONE, NONE, NONE   }, .func = nofunc},
+    {.shift = NONE    , .douji = B_DOT          , .kana = {DOT, ENTER, NONE, NONE, NONE, NONE   }, .func = nofunc},
     {.shift = NONE    , .douji = B_Y            , .kana = {BSPC, NONE, NONE, NONE, NONE, NONE   }, .func = nofunc},
 
     {.shift = NONE    , .douji = B_V|B_M        , .kana = {ENTER, NONE, NONE, NONE, NONE, NONE  }, .func = nofunc}, // enter
