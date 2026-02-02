@@ -63,6 +63,7 @@ extern int64_t timestamp;
 #define B_SLASH (1UL << 29)
 
 #define B_SPACE (1UL << 30)
+#define B_ENTER (1UL << 31)
 
 static NGListArray nginput;
 static uint32_t pressed_keys = 0UL; // 押しているキーのビットをたてる
@@ -89,7 +90,7 @@ static const uint32_t ng_key[] = {
     [Q - A] = B_Q,     [R - A] = B_R,         [S - A] = B_S,         [T - A] = B_T,
     [U - A] = B_U,     [V - A] = B_V,         [W - A] = B_W,         [X - A] = B_X,
     [Y - A] = B_Y,     [Z - A] = B_Z,         [SEMI - A] = B_SEMI,   [COMMA - A] = B_COMMA,
-    [DOT - A] = B_DOT, [SLASH - A] = B_SLASH, [SPACE - A] = B_SPACE, [ENTER - A] = B_SPACE,
+    [DOT - A] = B_DOT, [SLASH - A] = B_SLASH, [SPACE - A] = B_SPACE, [ENTER - A] = B_ENTER,
 };
 
 // カナ変換テーブル
@@ -99,6 +100,13 @@ typedef struct {
     uint32_t kana[6];
     void (*func)(void);
 } naginata_kanamap;
+
+static void ng_ShiftEnter(void) {
+    raise_zmk_keycode_state_changed_from_encoded(LSHIFT, true, timestamp);
+    raise_zmk_keycode_state_changed_from_encoded(ENTER, true, timestamp);
+    raise_zmk_keycode_state_changed_from_encoded(ENTER, false, timestamp);
+    raise_zmk_keycode_state_changed_from_encoded(LSHIFT, false, timestamp);
+}
 
 static naginata_kanamap ngdickana[] = {
     // 清音
@@ -189,7 +197,7 @@ static naginata_kanamap ngdickana[] = {
     {.shift = NONE    , .douji = B_P|B_K        , .kana = {X, U, NONE, NONE, NONE, NONE   }, .func = nofunc }, // ぅ
     {.shift = NONE    , .douji = B_P|B_W        , .kana = {X, E, NONE, NONE, NONE, NONE   }, .func = nofunc }, // ぇ
     {.shift = NONE    , .douji = B_P|B_Z        , .kana = {X, O, NONE, NONE, NONE, NONE   }, .func = nofunc }, // ぉ
-    {.shift = NONE    , .douji = B_P|B_V      , .kana = {X, W, A, NONE, NONE, NONE      }, .func = nofunc }, // ゎ
+    {.shift = NONE    , .douji = B_P|B_V        , .kana = {X, W, A, NONE, NONE, NONE      }, .func = nofunc }, // ゎ
     {.shift = NONE    , .douji = B_G            , .kana = {X, T, U, NONE, NONE, NONE      }, .func = nofunc }, // っ
     {.shift = NONE    , .douji = B_P|B_A        , .kana = {X, K, E, NONE, NONE, NONE      }, .func = nofunc }, // ヶ
     {.shift = NONE    , .douji = B_P|B_J        , .kana = {X, K, A, NONE, NONE, NONE      }, .func = nofunc }, // ヵ
@@ -276,6 +284,8 @@ static naginata_kanamap ngdickana[] = {
     {.shift = NONE    , .douji = B_SLASH        , .kana = {DOT, ENTER, NONE, NONE, NONE, NONE   }, .func = nofunc},
     {.shift = NONE    , .douji = B_Y            , .kana = {BSPC, NONE, NONE, NONE, NONE, NONE   }, .func = nofunc},
 
+    {.shift = NONE    , .douji = B_ENTER        , .kana = {ENTER, NONE, NONE, NONE, NONE, NONE  }, .func = nofunc},
+    {.shift = B_SPACE , .douji = B_ENTER        , .kana = {NONE, NONE, NONE, NONE, NONE, NONE   }, .func = ng_ShiftEnter},
     {.shift = NONE    , .douji = B_V|B_M        , .kana = {ENTER, NONE, NONE, NONE, NONE, NONE  }, .func = nofunc}, // enter
     // {.shift = B_SPACE, .douji = B_V|B_M, .kana = {ENTER, NONE, NONE, NONE, NONE, NONE}, .func = nofunc}, // enter+シフト(連続シフト)
 
