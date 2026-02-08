@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <zephyr/kernel.h>
 #define DT_DRV_COMPAT zmk_behavior_naginata
 
 #include <zephyr/device.h>
@@ -17,6 +18,8 @@
 #include <zmk_naginata/nglist.h>
 #include <zmk_naginata/nglistarray.h>
 #include <zmk_naginata/naginata_func.h>
+
+#include <dt-bindings/zmk/keys.h> // Include keys.h after system headers to avoid conflicts
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 extern int64_t timestamp;
@@ -286,7 +289,7 @@ static naginata_kanamap ngdickana[] = {
 
     {.shift = NONE    , .douji = B_ENTER        , .kana = {ENTER, NONE, NONE, NONE, NONE, NONE  }, .func = nofunc},
     {.shift = B_SPACE , .douji = B_ENTER        , .kana = {NONE, NONE, NONE, NONE, NONE, NONE   }, .func = ng_ShiftEnter},
-    {.shift = NONE    , .douji = B_V|B_M        , .kana = {ENTER, NONE, NONE, NONE, NONE, NONE  }, .func = nofunc}, // enter
+    {.shift = B_SPACE , .douji = B_P            , .kana = {TAB, NONE, NONE, NONE, NONE, NONE  }, .func = nofunc}, // enter
     // {.shift = B_SPACE, .douji = B_V|B_M, .kana = {ENTER, NONE, NONE, NONE, NONE, NONE}, .func = nofunc}, // enter+シフト(連続シフト)
 
     {.shift = NONE    , .douji = B_T            , .kana = {NONE, NONE, NONE, NONE, NONE, NONE   }, .func = ng_T}, //
